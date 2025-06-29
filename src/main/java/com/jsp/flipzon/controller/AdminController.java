@@ -1,5 +1,6 @@
 package com.jsp.flipzon.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,6 +25,11 @@ public class AdminController {
 	@GetMapping("/home")
 	public String loadAdminHome(HttpSession session) {
 		return adminService.loadHome(session);
+	}
+	
+	@GetMapping("/add-dummy-records")
+	public String addDummy(HttpSession session) {
+		return adminService.addDummyProducts(session);
 	}
 
 	@GetMapping("/add-product")
